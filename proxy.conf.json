@@ -1,0 +1,11 @@
+{
+  "/api": {
+    "target": "https://ginventory.reed.be/api/v2/products",
+    "secure": false,
+    "pathRewrite": {
+      "^/api": ""
+    },
+    "changeOrigin": true,
+    "logLevel": "info"
+  }
+}

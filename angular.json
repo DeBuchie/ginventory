@@ -1,0 +1,134 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "ginventory": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/ginventory",
+      "sourceRoot": "projects/ginventory/src",
+      "prefix": "gin",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/ginventory",
+            "index": "projects/ginventory/src/index.html",
+            "main": "projects/ginventory/src/main.ts",
+            "polyfills": "projects/ginventory/src/polyfills.ts",
+            "tsConfig": "projects/ginventory/tsconfig.app.json",
+            "assets": [
+              "projects/ginventory/src/favicon.ico",
+              "projects/ginventory/src/assets"
+            ],
+            "styles": [
+              "projects/ginventory/src/styles.scss"
+            ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "projects/ginventory/src/styling"
+              ]
+            },
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/ginventory/src/environments/environment.ts",
+                  "with": "projects/ginventory/src/environments/environment.prod.ts"
+                }
+              ],
+              "aot": true,
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "ginventory:build",
+            "proxyConfig": "./proxy.conf.json"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "ginventory:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "ginventory:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ginventory/src/test.ts",
+            "polyfills": "projects/ginventory/src/polyfills.ts",
+            "tsConfig": "projects/ginventory/tsconfig.spec.json",
+            "karmaConfig": "projects/ginventory/karma.conf.js",
+            "assets": [
+              "projects/ginventory/src/favicon.ico",
+              "projects/ginventory/src/assets"
+            ],
+            "styles": [
+              "projects/ginventory/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ginventory/tsconfig.app.json",
+              "projects/ginventory/tsconfig.spec.json",
+              "projects/ginventory/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/ginventory/e2e/protractor.conf.js",
+            "devServerTarget": "ginventory:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "ginventory:serve:production"
+            }
+          }
+        }
+      }
+    }},
+  "defaultProject": "ginventory"
+}
