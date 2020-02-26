@@ -1,0 +1,45 @@
+<ng-container *ngIf = !isLoading>
+  <div class="row">
+    <div class="col-12">
+      <div class="product-details-container" *ngIf="productData">
+        <div>
+          <img
+            [src]="productData.picture_url"
+            [alt]="productData.name"
+            height="400"
+          />
+          <ng-container>
+            <gin-product-rating [productRating]="productData.average_rating"></gin-product-rating>
+          </ng-container>
+        </div>
+        <div class="text-container">
+          <div class="headline-container">
+            <div class="headline">
+              <gin-product-headline [firstName]="productData.first_name" [secondName]="productData.second_name" [name]="productData.name"></gin-product-headline>
+              <h5>{{productData.producer}}</h5>
+            </div>
+          </div>
+          <div class="description">
+            <p>{{productData.description.content}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row" *ngIf="productData.perfect_tonics">
+    <div class="col-12">
+      <h5>Perfekte Tonics</h5>
+      <ul class="list-group list-group-flush">
+        <li class="list-group item" *ngFor="let tonic of productData.perfect_tonics.data">
+          <a [routerLink]="['/', 'product', tonic.id]">
+            <img width="50" [src]="tonic.picture_url">
+            <p>{{tonic.name}}</p>
+          </a>
+
+        </li>
+      </ul>
+    </div>
+  </div>
+</ng-container>
+
+

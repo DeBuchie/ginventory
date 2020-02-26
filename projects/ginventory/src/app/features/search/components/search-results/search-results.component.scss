@@ -1,0 +1,10 @@
+@import "variables";
+.search-result-container {
+  display: inline-flex;
+  align-items: center;
+}
+
+.list-group-item {
+  background-color: $bg-color;
+}
+

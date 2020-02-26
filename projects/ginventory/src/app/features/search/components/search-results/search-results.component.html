@@ -1,0 +1,12 @@
+<ng-container *ngIf="searchResults.length > 0">
+  <ul class="list-group">
+    <li class="list-group-item list-group-item-action" *ngFor="let searchResult of searchResults">
+      <a [routerLink]="['/','product', searchResult.id]">
+        <div class="search-result-container">
+          <img class="mr-3" height="50" [src]="searchResult.picture_url" [alt]="searchResult.name">
+          <span>{{searchResult.name}} <small>{{searchResult.average_rating}}</small></span>
+        </div>
+      </a>
+    </li>
+  </ul>
+</ng-container>

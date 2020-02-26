@@ -1,0 +1,16 @@
+@import "variables";
+
+:host {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.productRating {
+  display: flex;
+  background-color: $ginventory-yellow;
+  color: $ginventory-white;
+  border-radius: 40px;
+  font-size: 40px;
+  padding: 10px;
+}

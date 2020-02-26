@@ -1,0 +1,20 @@
+<nav class="navbar navbar-expand-lg">
+  <span class="navbar-brand">Ginventory</span>
+  <button class="navbar-toggler"
+          type="button"
+          (click)="onNavbarToggleClick()"
+          data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="navbar-collapse" id="navbarSupportedContent" [ngbCollapse]="isMenuCollapsed">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" [routerLink]="['']">Home</a>
+      </li>
+    </ul>
+  </div>
+</nav>

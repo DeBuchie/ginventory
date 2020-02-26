@@ -1,0 +1,13 @@
+<div class="row">
+  <div class="col-12">
+    <gin-search-box
+      (searchTerm)="onSearchTermChange($event)"
+      (changeProductTypeFilter)="onProductTypeFilterChange($event)"
+    ></gin-search-box>
+  </div>
+</div>
+<div class="row">
+  <div class="col-12">
+    <gin-search-results [searchResults]="searchResults$ | async"></gin-search-results>
+  </div>
+</div>

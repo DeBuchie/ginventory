@@ -1,0 +1,10 @@
+
+<ng-container *ngIf="firstName && secondName; else onlyFullName">
+  <h1>
+    {{firstName}} <small>{{secondName}}</small>
+  </h1>
+</ng-container>
+
+<ng-template #onlyFullName>
+  <h1>{{name}}</h1>
+</ng-template>

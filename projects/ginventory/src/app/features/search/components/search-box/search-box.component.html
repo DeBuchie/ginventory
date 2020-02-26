@@ -1,0 +1,4 @@
+<input type="text" [formControl]="searchBoxFormControl">
+<ng-container *ngFor="let productType of availableProductTypes">
+  <button (click)="onChangeProductTypeFilter(productType)">{{productType}}</button>
+</ng-container>

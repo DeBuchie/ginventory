@@ -1,0 +1,20 @@
+@import "variables";
+.product-details-container {
+  display: flex;
+  justify-content: space-between;
+  .text-container {
+    margin-left: 10px;
+    align-self: center;
+
+    .headline-container {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}
+
+.product-rating {
+  border: 1px solid black;
+  border-radius: 10px;
+  background-color: $ginventory-yellow;
+}
