@@ -32,10 +32,9 @@
       <ul class="list-group list-group-flush">
         <li class="list-group item" *ngFor="let tonic of productData.perfect_tonics.data">
           <a [routerLink]="['/', 'product', tonic.id]">
-            <img width="50" [src]="tonic.picture_url">
+            <img height="50" [src]="tonic.picture_url">
             <p>{{tonic.name}}</p>
           </a>
-
         </li>
       </ul>
     </div>
